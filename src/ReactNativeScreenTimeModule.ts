@@ -1,6 +1,5 @@
-import { NativeModulesProxy } from "expo-modules-core";
+import { requireNativeModule } from 'expo-modules-core';
 
-// Import the native module
-const ReactNativeScreenTimeModule = NativeModulesProxy.ReactNativeScreenTime;
-
-export default ReactNativeScreenTimeModule;
+// It loads the native module object from the JSI or falls back to
+// the bridge module (from NativeModulesProxy) if the remote debugger is on.
+export default requireNativeModule('ReactNativeScreenTime');

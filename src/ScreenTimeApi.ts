@@ -7,11 +7,27 @@ import {
 } from './types';
 
 export class ScreenTimeApi {
+  private static checkModule() {
+    if (!ReactNativeScreenTimeModule) {
+      throw new Error(
+        'ReactNativeScreenTime module is not available. ' +
+        'Make sure you are running on iOS and the module is properly linked.'
+      );
+    }
+    if (typeof ReactNativeScreenTimeModule.requestAuthorization !== 'function') {
+      throw new Error(
+        'ReactNativeScreenTime module methods are not available. ' +
+        'This might happen if you are running on a simulator or web. ' +
+        'Screen Time API only works on physical iOS devices.'
+      );
+    }
+  }
   /**
    * Request authorization to access Screen Time data
    * This will show the system permission dialog to the user
    */
   static async requestAuthorization(): Promise<string> {
+    this.checkModule();
     return await ReactNativeScreenTimeModule.requestAuthorization();
   }
 
@@ -20,6 +36,7 @@ export class ScreenTimeApi {
    * @returns AuthorizationStatus - current status
    */
   static getAuthorizationStatus(): AuthorizationStatus {
+    this.checkModule();
     return ReactNativeScreenTimeModule.getAuthorizationStatus();
   }
 
