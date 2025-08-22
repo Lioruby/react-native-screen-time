@@ -1,0 +1,8 @@
+{
+  "android": {
+    "package": "com.lioruby.reactnativescreentime"
+  },
+  "ios": {
+    "bundleIdentifier": "com.lioruby.reactnativescreentime"
+  }
+}
