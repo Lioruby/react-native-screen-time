@@ -1,0 +1,36 @@
+{
+  "name": "react-native-screen-time",
+  "version": "1.0.0",
+  "description": "Expo module for iOS ScreenTime API",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf build"
+  },
+  "keywords": [
+    "react-native",
+    "expo",
+    "screentime",
+    "ios"
+  ],
+  "repository": "https://github.com/lioruby/react-native-screen-time",
+  "author": "LioRuby <lioruby@example.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/lioruby/react-native-screen-time#readme",
+  "devDependencies": {
+    "@expo/config-plugins": "*",
+    "expo-module-scripts": "*",
+    "typescript": "*",
+    "@types/react": "*",
+    "@types/react-native": "*"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "expo": {
+    "platforms": ["ios"]
+  }
+}

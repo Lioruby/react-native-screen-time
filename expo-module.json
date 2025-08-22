@@ -1,0 +1,8 @@
+{
+  "name": "react-native-screen-time",
+  "version": "1.0.0",
+  "platforms": ["ios"],
+  "ios": {
+    "modules": ["ReactNativeScreenTimeModule"]
+  }
+}
